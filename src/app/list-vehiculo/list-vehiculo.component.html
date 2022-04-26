@@ -1,0 +1,106 @@
+<div class="card-button">
+    <button mat-raised-button *ngIf="!register" (click)="register = !register">Registrar vehiculo</button>
+</div>
+<div class="card" *ngIf="!register">
+    <div class="card-body">
+        <div class="card-section">
+            <h1 style="margin: 0; padding: 0;color: #B23423;">{{ propietario.name + " " + propietario.lastName}}</h1>
+            <span>{{ propietario.document }}</span>
+        </div>
+        <div class="card-section-two">
+            <table class="table-content">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Marca</th>
+                        <th>Linea</th>
+                        <th>Cilindrada</th>
+                        <th>Color</th>
+                        <th>Chasis</th>
+                        <th>Tipo</th>
+                        <th>Modelo</th>
+                        <th>Elimnar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of vehiculos">
+                        <td class="row-content">{{ item.placa }}</td>
+                        <td class="row-content">{{ item.marca }}</td>
+                        <td class="row-content">{{ item.linea }}</td>
+                        <td class="row-content">{{ item.cilindrada }}</td>
+                        <td class="row-content">{{ item.color }}</td>
+                        <td class="row-content">{{ item.chasis }}</td>
+                        <td class="row-content">{{ item.tipo }}</td>
+                        <td class="row-content">{{ item.modelo }}</td>
+                        <td class="row-content">
+                            <mat-icon style="cursor: pointer;" matSuffix (click)="deleteVehiculo(item.vehiculoId)">delete</mat-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        <p style="color: red;">{{ error }}</p>
+    </div>
+</div>
+<div class="card" *ngIf="register">
+    <div class="card-body">
+        <div class="card-section">
+            <h1 style="margin: 0; padding: 0;color: #B23423;">{{ propietario.name + " " + propietario.lastName}}</h1>
+            <span>{{ propietario.document }}</span><br>
+            <span>Completa el formulario para registrar un vehiculo.</span>
+        </div>
+        <div class="card-section-two">
+            <form [formGroup]="vehiculoForm">
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Placa</mat-label>
+                    <input matInput placeholder="Placa" formControlName="placa">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Marca</mat-label>
+                    <input matInput placeholder="Marca" formControlName="marca">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Linea</mat-label>
+                    <input matInput placeholder="Linea" formControlName="linea">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Cilindrada</mat-label>
+                    <input matInput placeholder="Cilindrada" formControlName="cilindrada">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Color</mat-label>
+                    <input matInput placeholder="Color" formControlName="color">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Chasis</mat-label>
+                    <input matInput placeholder="Chasis" formControlName="chasis">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput placeholder="Tipo" formControlName="tipo">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Modelo</mat-label>
+                    <input matInput placeholder="Modelo" formControlName="modelo">
+                    <mat-icon matSuffix>directions_car</mat-icon>
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer">
+        <p style="color: red;">{{ error }}</p>
+    </div>
+</div>
+<div class="card-button" *ngIf="register">
+    <button mat-raised-button *ngIf="register" (click)="register = !register" style="margin: 0 10px;">Cancelar</button>
+    <button mat-raised-button (click)="registerVehiculo()">Registrar vehiculo</button>
+</div>

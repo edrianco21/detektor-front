@@ -1,0 +1,46 @@
+.text-one {
+    color: #FFFFFF;
+}
+
+.card {
+    background-color: #FFFFFF;
+    width: 60em;
+    height: min-content;
+    border-radius: 30px;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+}
+
+.card-section {
+    text-align: right;
+    padding: 0 10px;
+    width: 30%;
+    height: 100%;
+}
+
+.card-section-two {
+    padding: 0 10px;
+    width: 70%;
+    height: 100%;
+    border-left: 2px solid #b23423c3;
+    display: flex;
+}
+
+.field-container {
+    margin: 8px;
+}
+
+.card-button {
+    text-align: center;
+}
+
+.card-footer {
+    text-align: center;
+    margin: 10px;
+}

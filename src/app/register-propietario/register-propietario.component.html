@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-section">
+            <h1 style="margin: 0; padding: 0;color: #B23423;">Hola,</h1>
+            <span>Bienvenido al aplicativo de Detektor, completa el formulario para registrarte como Propietario</span>
+        </div>
+        <div class="card-section-two">
+            <form [formGroup]="propietarioForm">
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Nombre" formControlName="name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput placeholder="Apellido" formControlName="lastName">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Correo electronico</mat-label>
+                    <input matInput placeholder="Correo electronico" formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Numero celular</mat-label>
+                    <input matInput placeholder="Numero celular" formControlName="phone">
+                    <mat-icon matSuffix>phone_android</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Direcci&oacute;n</mat-label>
+                    <input matInput placeholder="Direcci&oacute;n" formControlName="address">
+                    <mat-icon matSuffix>edit_location</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="standard" style="margin: 0 10px;">
+                    <mat-label>Documento</mat-label>
+                    <input matInput placeholder="Documento" formControlName="document">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer">
+        <p style="color: red;">{{ error }}</p>
+    </div>
+</div>
+<div class="card-button">
+    <button mat-raised-button (click)="submit()">Continuar</button>
+</div>
